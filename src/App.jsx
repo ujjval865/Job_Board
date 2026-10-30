@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Job from "./pages/Job";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import JobDetails from "./pages/JobDetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Job></Job>}></Route>
+        <Route path="/jobs/:guid" element={<JobDetails />} />
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
       </Routes>

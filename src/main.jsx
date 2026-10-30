@@ -3,6 +3,9 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import AuthContext from "./context/AuthContext.jsx";
+import stores from "./stores.js";
+import { Provider } from "react-redux";
+
 import {
   BrowserRouter,
   Routes,
@@ -11,9 +14,11 @@ import {
   useNavigate,
 } from "react-router-dom";
 createRoot(document.getElementById("root")).render(
-  <AuthContext>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </AuthContext>,
+  <Provider store={stores}>
+    <AuthContext>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthContext>
+  </Provider>,
 );
