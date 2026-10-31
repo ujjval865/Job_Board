@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { contact } from "../data/data";
 import {
@@ -90,32 +91,35 @@ function Contact() {
     }, 3000);
   };
 
-  const socialLinks = [
-    {
-      name: "Twitter",
-      url: contact.socials.twitter,
-      icon: AtSign,
-    },
-    {
-      name: "LinkedIn",
-      url: contact.socials.linkedin,
-      icon: BriefcaseBusiness,
-    },
-    {
-      name: "GitHub",
-      url: contact.socials.github,
-      icon: Code2,
-    },
-  ];
+  // Social Media Links
+const socialLinks = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/forntendfuel/",
+    icon: AtSign,
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/ujjval865",
+    icon: Code2,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ujjval-gahlot-484516406/",
+    icon: BriefcaseBusiness,
+  },
+];
 
   return (
     <main className="relative isolate overflow-hidden bg-white px-4 py-14 text-slate-800 transition-colors duration-300 sm:px-6 sm:py-20 dark:bg-slate-950 dark:text-slate-100">
+
       {/* Background Decorations */}
       <div className="pointer-events-none absolute -left-24 top-10 -z-10 h-72 w-72 rounded-full bg-emerald-300/30 blur-3xl dark:bg-emerald-500/10" />
 
       <div className="pointer-events-none absolute -right-24 bottom-10 -z-10 h-72 w-72 rounded-full bg-teal-300/30 blur-3xl dark:bg-teal-500/10" />
 
       <div className="mx-auto max-w-7xl">
+
         {/* Heading */}
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-400">
@@ -134,8 +138,10 @@ function Contact() {
 
         {/* Main Layout */}
         <div className="grid items-start gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
+
           {/* Contact Information */}
           <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
               Let's talk
             </h2>
@@ -202,10 +208,14 @@ function Contact() {
             {/* Social Links */}
             <div className="mt-7 border-t border-slate-200 pt-6 dark:border-slate-800">
               <h3 className="font-semibold text-slate-900 dark:text-white">
-                Follow Us
+                Connect With Me
               </h3>
 
-              <div className="mt-4 flex gap-3">
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                Let's connect and grow together!
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
 
@@ -216,9 +226,10 @@ function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.name}
-                      className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-emerald-800 dark:hover:bg-emerald-950 dark:hover:text-emerald-400"
+                      title={social.name}
+                      className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-emerald-800 dark:hover:bg-emerald-950 dark:hover:text-emerald-400"
                     >
-                      <Icon size={20} />
+                      <Icon size={21} />
                     </a>
                   );
                 })}
@@ -228,6 +239,7 @@ function Contact() {
 
           {/* Contact Form */}
           <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-900/5 sm:p-8 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/10">
+
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
               Send us a message
             </h2>
@@ -263,7 +275,9 @@ function Contact() {
                       required={field.required}
                       aria-invalid={Boolean(errors[field.name])}
                       aria-describedby={
-                        errors[field.name] ? `${field.name}-error` : undefined
+                        errors[field.name]
+                          ? `${field.name}-error`
+                          : undefined
                       }
                       placeholder="Write your message here..."
                       className={`w-full resize-y rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:bg-white focus:ring-4 dark:bg-slate-950 dark:text-white dark:focus:bg-slate-950 ${
@@ -282,7 +296,9 @@ function Contact() {
                       required={field.required}
                       aria-invalid={Boolean(errors[field.name])}
                       aria-describedby={
-                        errors[field.name] ? `${field.name}-error` : undefined
+                        errors[field.name]
+                          ? `${field.name}-error`
+                          : undefined
                       }
                       placeholder={
                         field.name === "name"
